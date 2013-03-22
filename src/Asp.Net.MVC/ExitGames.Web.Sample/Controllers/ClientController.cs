@@ -16,7 +16,7 @@ namespace ExitGames.Web.Sample.Controllers
 
     // TODO be sure to use SSL in production
     //[RequireHttps]
-    public class ClientController : AsyncController
+    public class ClientController : Controller
     {
         public ClientController()
             : this(null)
