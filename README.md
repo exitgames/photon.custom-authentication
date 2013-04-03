@@ -1,4 +1,4 @@
-photon.client-authentication
+photon.custom-authentication
 ============================
 
-Sample Client Authentication Services For Exit Games Photon Server
+This repository provides sample Custom Authentication Service implementations for Exit Games Photon Server.
