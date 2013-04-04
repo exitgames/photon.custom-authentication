@@ -11,19 +11,18 @@ You also want to have a look at the [documentation](http://doc.exitgames.com/pho
 
 ## Authenticate Interface
 
-You can set up an application with a HTTP(s) endpoint as your authentication provider. The URI of this service has to be configured in your application via your [dashboard](https://cloud.exitgames.com/dashboard)). This could e.g. be https://auth.mycoolgame.com/.
-The actual data used for the authentication (username, password, ...) has to be passed in by the client and will be forwarded to the authentication provider by the Photon server. Have a look at the [documentation](http://doc.exitgames.com/photon-cloud/CustomAuthentication/) for details.
+You can set up an application with a HTTP(s) endpoint as your authentication provider. The URI of this service has to be configured in your application via your [dashboard](https://cloud.exitgames.com/dashboard). This could e.g. be "https://auth.mycoolgame.com/".
+The actual data used for the authentication (username, password, ...) has to be passed in by the client and will be forwarded to the authentication provider by the Photon server via HTTP GET. Have a look at the [documentation](http://doc.exitgames.com/photon-cloud/CustomAuthentication/) for details.
 
 How you handle the authentication internally is totally up to you.
 The result has to be in Json format with the following values:
 
 ```json
-Auth OK
-{ ResultCode: 1, Message: null }
+{ ResultCode: 1, Message: "optional Auth OK message" }
 
 Auth Failed
-{ ResultCode: 2, Message: "some optional message" }
+{ ResultCode: 2, Message: "optional Auth Failed message" }
 
 Parameter invalid
-{ ResultCode: 3, Message: "Parameter invalid" }
+{ ResultCode: 3, Message: "optional Parameter invalid message" }
 ```
