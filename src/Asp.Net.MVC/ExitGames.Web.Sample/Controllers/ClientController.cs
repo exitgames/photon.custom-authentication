@@ -34,7 +34,7 @@ namespace ExitGames.Web.Sample.Controllers
         {
             if (string.IsNullOrWhiteSpace(userName) || string.IsNullOrWhiteSpace(token))
             {
-                var resultErrorInput = new Result { ResultCode = 2, Message = "Parameter invalid" };
+                var resultErrorInput = new Result { ResultCode = 3, Message = "Parameter invalid" };
                 JsonResult resultErrorInputJson = this.Json(resultErrorInput, JsonRequestBehavior.AllowGet);
                 return resultErrorInputJson;
             }
@@ -42,6 +42,7 @@ namespace ExitGames.Web.Sample.Controllers
             bool authenticated = this.AuthenticationService.Authenticate(userName, token);
             if (authenticated)
             {
+                // authentication ok
                 var resultOk = new Result { ResultCode = 1 };
                 JsonResult resultOkJson = this.Json(resultOk, JsonRequestBehavior.AllowGet);
                 return resultOkJson;
@@ -51,7 +52,7 @@ namespace ExitGames.Web.Sample.Controllers
             var resultError = new Result
             {
                 ResultCode = 2,
-                ////Message = "whatever reason"
+                ////Message = "whatever reason" // optional
             };
             JsonResult resultErrorJson = this.Json(resultError, JsonRequestBehavior.AllowGet);
             return resultErrorJson;

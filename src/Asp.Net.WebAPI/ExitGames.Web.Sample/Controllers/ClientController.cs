@@ -35,13 +35,14 @@ namespace ExitGames.Web.Sample.Controllers
         {
             if (string.IsNullOrWhiteSpace(userName) || string.IsNullOrWhiteSpace(token))
             {
-                var resultErrorInput = new Result { ResultCode = 2, Message = "Parameter invalid" };
+                var resultErrorInput = new Result { ResultCode = 3, Message = "Parameter invalid" };
                 return resultErrorInput;
             }
 
             bool authenticated = this.AuthenticationService.Authenticate(userName, token);
             if (authenticated)
             {
+                // authentication ok
                 var resultOk = new Result { ResultCode = 1 };
                 return resultOk;
             }
@@ -50,7 +51,7 @@ namespace ExitGames.Web.Sample.Controllers
             var resultError = new Result
             {
                 ResultCode = 2,
-                ////Message = "whatever reason"
+                ////Message = "whatever reason" // optional
             };
             return resultError;
         }
