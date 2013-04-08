@@ -30,6 +30,19 @@ namespace ExitGames.Web.Sample.Controllers
 
         public IClientAuthenticationService AuthenticationService { get; private set; }
 
+        //// Example calls with results according to current routing setup:
+        //// http://dev-customauth.exitgames.com/client/authenticate/yes/yes -> 1
+        //// http://dev-customauth.exitgames.com/client/authenticate/yes/no -> 2
+        //// http://dev-customauth.exitgames.com/client/authenticate?username=yes&token=yes -> 1
+        //// http://dev-customauth.exitgames.com/client/authenticate?username=yes&token=no -> 2
+        //// http://dev-customauth.exitgames.com/client/authenticate -> 3 Parameter invalid
+
+        /// <summary>
+        /// Authenticates a user with the given credentials.
+        /// </summary>
+        /// <param name="userName">Name of user to authenticate.</param>
+        /// <param name="token">Token to authenticate user with.</param>
+        /// <returns>Result of authentication.</returns>
         public ActionResult Authenticate(string userName, string token)
         {
             if (string.IsNullOrWhiteSpace(userName) || string.IsNullOrWhiteSpace(token))

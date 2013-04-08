@@ -20,9 +20,7 @@ The result has to be in Json format with the following values:
 ```json
 { ResultCode: 1, Message: "optional Auth OK message" }
 
-Auth Failed
 { ResultCode: 2, Message: "optional Auth Failed message" }
 
-Parameter invalid
 { ResultCode: 3, Message: "optional Parameter invalid message" }
 ```
