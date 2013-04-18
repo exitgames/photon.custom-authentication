@@ -1,7 +1,7 @@
 Exit Games Photon - Custom Authentication
 =========================================
 
-This repository provides sample Custom Authentication Service implementations for the Exit Games Photon Cloud Server.
+This repository provides sample Custom Authentication Service implementations for the Exit Games Photon Cloud SaaS.
 
 ## Overview
 
