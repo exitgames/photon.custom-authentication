@@ -35,7 +35,8 @@ namespace ExitGames.Web.Sample.Controllers
         //// http://dev-customauth.exitgames.com/api/client/authenticate/yes/no -> 2
         //// http://dev-customauth.exitgames.com/api/client/authenticate?username=yes&token=yes -> 1
         //// http://dev-customauth.exitgames.com/api/client/authenticate?username=yes&token=no -> 2
-        //// http://dev-customauth.exitgames.com/api/client/authenticate -> 3 Parameter invalid
+        //// http://dev-customauth.exitgames.com/api/client/authenticate -> 3 Parameter invalid (404 for WebAPI)
+        //// http://dev-customauth.exitgames.com/api/client/authenticate?username=&token= -> 3 Parameter invalid (OK for WebAPI)
 
         /// <summary>
         /// Authenticates a user with the given credentials.
