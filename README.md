@@ -25,3 +25,14 @@ The result has to be in Json format with the following values:
 
 { ResultCode: 3, Message: "optional Parameter invalid message" }
 ```
+
+## Other Samples
+
+You might also check out our [forum](http://forum.exitgames.com/) and discuss with others using the feature.
+Topics to note:
+* [About custom authentication - How to do it in PHP](http://forum.exitgames.com/viewtopic.php?f=17&t=2697)
+* [Custom Auth and Parse](http://forum.exitgames.com/viewtopic.php?f=19&t=2777)
+* [Basics of Custom Authentication? Resources?](http://forum.exitgames.com/viewtopic.php?f=17&t=2706)
+
+We will add some more samples, as soon as we find some time :)
+

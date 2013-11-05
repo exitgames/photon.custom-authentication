@@ -1,0 +1,63 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+
+    <title>My App</title>
+    <meta name="description" content="My App">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script type="text/javascript" src="Photon/Photon-Javascript_SDK.js"></script>
+    <script type="text/javascript" src="cloud-app-info.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</head>
+
+<body>
+  
+    <div id="main">
+        <h1>My App</h1>
+        
+        <h3>Using Photon Custom Authentication for Facebook</h3>
+
+        <p>Read the documentation and start building your JavaScript app:</p>
+
+        <p>Custom Authentication - General Overview (<a href="http://doc.exitgames.com/photon-cloud/CustomAuthentication/">doc</a>)</p>
+        <p>Custom Authentication for Facebook (<a href="http://doc.exitgames.com/photon-cloud/TutorialJavaScriptCustomAuthFacebook/">doc</a>)</p>
+
+        <p>Photon Javascript SDK (<a href="http://doc.exitgames.com/photon-cloud/SDKjavascript/#cat-SDKs">doc</a>)</p>
+
+        <p>Facebook Login Button (<a href="https://developers.facebook.com/docs/reference/plugins/login/">doc</a>):</p>
+        <div class="fb-login-button" data-show-faces="true" data-width="400" data-max-rows="1" data-registration-url=""></div>
+
+        <p id="output"></p>
+    </div>
+
+    <div id="fb-root"></div>
+  
+    <script type="text/javascript">
+        window.fbAsyncInit = function () {
+            FB.Event.subscribe('auth.authResponseChange', function (response) {
+                if (response.status === "connected") {
+					client.setCustomAuthentication("token=" + response.authResponse.accessToken, 2);
+					client.output("Got fb token. Setting custom fb authentication.");
+					client.output("Connect...");
+					client.connect(true);
+                }
+            });
+        };
+     
+        (function (d, s, id) {
+            var fbAppId = DemoFbAppId;
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/all.js#xfbml=1&appId=" + fbAppId;
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+</body>
+
+</html>
+
+
