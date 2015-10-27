@@ -19,9 +19,16 @@ namespace ExitGames.Web.Sample
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                "Authenticate2",
+                "api/{controller}/{action}/{userName}/{token}");
+            routes.MapRoute(
                 "Authenticate",
                 "{controller}/{action}/{userName}/{token}");
 
+            routes.MapRoute(
+                name: "Default2",
+                url: "api/{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional });
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
