@@ -20,10 +20,18 @@ namespace ExitGames.Web.Sample
                 name: "Authenticate",
                 routeTemplate: "api/client/authenticate/{userName}/{token}",
                 defaults: new { controller = "Client", action = "Authenticate" });
+            config.Routes.MapHttpRoute(
+                name: "Authenticate2",
+                routeTemplate: "client/authenticate/{userName}/{token}",
+                defaults: new { controller = "Client", action = "Authenticate" });
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
+                defaults: new { id = RouteParameter.Optional });
+            config.Routes.MapHttpRoute(
+                name: "DefaultApi2",
+                routeTemplate: "{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional });
 
             // return JSON by default - to get XML add the "text/xml" accept header at the client request
