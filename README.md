@@ -5,7 +5,7 @@ This repository provides sample Custom Authentication Service implementations fo
 
 ## Overview
 
-When using the Exit Games Photon Cloud (Realtime, PUN, Chat or Turnbased) to develop your application, you have the option of setting up custom authentication providers for your application. This way, you are able to authenticate your users against a number of authentication providers. This includes a custom authentication provider, that you can build and host yourself, so that you can do authentication against e.g. your own user database. This repository provides sample implementations of such a service.
+When using the Exit Games Photon Cloud (Realtime, PUN, Voice, Chat, ...) to develop your application, you have the option of setting up custom authentication providers for your application. This way, you are able to authenticate your users against a number of authentication providers. This includes a custom authentication provider, that you can build and host yourself, so that you can do authentication against e.g. your own user database. This repository provides sample implementations of such a service.
 
 You also want to have a look at the [documentation](http://doc.photonengine.com/en/realtime/current/reference/custom-authentication/) of the feature.
 
@@ -30,8 +30,11 @@ The result has to be in Json format with the following values:
 
 You might also check out our [forum](http://forum.photonengine.com/) and discuss with others using the feature.
 Topics to note:
-* [About custom authentication - How to do it in PHP](http://forum.photonengine.com/viewtopic.php?f=17&t=2697)
-* [Custom Auth and Parse](http://forum.photonengine.com/viewtopic.php?f=19&t=2777)
-* [Basics of Custom Authentication? Resources?](http://forum.photonengine.com/viewtopic.php?f=17&t=2706)
+* [About custom authentication - How to do it in PHP](http://forum.photonengine.com/discussion/2697/about-custom-authentication-how-to-do-it-in-php)
+* [Custom Auth and Parse](http://forum.photonengine.com/discussion/comment/12815)
+* [Basics of Custom Authentication? Resources?](http://forum.photonengine.com/discussion/2706/basics-of-custom-authentication-resources)
+* [Facebook URL for Authentication?](http://forum.photonengine.com/discussion/comment/28855)
+* [Any way to get the login message text from custom auth?](http://forum.photonengine.com/discussion/4891/any-way-to-get-the-login-message-text-from-custom-auth)
+* [Custom Authentication Auth token pass thru](http://forum.photonengine.com/discussion/5854/custom-authentication-auth-token-pass-thru)
 
 We will add some more samples, as soon as we find some time :)
